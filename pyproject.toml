@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-template"
+version = "0.1.0"
+description = "A project project template"
+requires-python = ">= 3.8"
+dependencies = [
+    # put them here
+]
+authors = [
+    {name = "author 1", email = "email@email.com"},
+    {name = "author 2", email = "email@email.com"},
+]
+maintainers = [
+    {name = "maintainer 1", email = "email@email.com"},
+    {name = "maintainer 2", email = "email@email.com"},
+]
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+keywords = ["template", "python"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black"
+]
+
+[project.scripts]
+tool = "tools.tool:main"
+
+[project.urls]
+Homepage = "https://example.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/me/spam.git"
+Issues = "https://github.com/me/spam/issues"
+Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
