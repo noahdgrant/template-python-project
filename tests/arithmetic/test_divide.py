@@ -1,6 +1,6 @@
 import pytest
 
-from arithmetic.arithmetic import divide
+from arithmetic import divide
 
 
 def test_divide():

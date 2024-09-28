@@ -1,4 +1,4 @@
-from arithmetic.arithmetic import add
+from arithmetic import add
 
 
 def test_add_int():

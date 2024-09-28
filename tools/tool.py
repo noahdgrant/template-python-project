@@ -2,7 +2,7 @@
 
 import logging
 
-from package.module import say_hello
+from package import say_hello
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
