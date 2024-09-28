@@ -3,5 +3,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def hello_world():
-    logger.info("Hello world")
+def say_hello(name: str):
+    logger.debug(f"Got: {name}")
+    print(f"Hello {name}")
