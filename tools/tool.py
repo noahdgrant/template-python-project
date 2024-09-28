@@ -2,14 +2,14 @@
 
 import logging
 
-from package.module import hello_world
+from package.module import say_hello
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 def main():
-    hello_world()
+    say_hello("Alice")
     logger.info("end")
 
 

@@ -57,6 +57,27 @@ or you can call the `__main__.py` file directly
 $ python ./src/package/__main__.py say hello <name>
 ```
 
+## Testing
+
+Run tests with
+
+```bash
+$ pytest
+```
+
+Run the following to get a report on your test coverage for a particular package
+
+```bash
+$ pytest --cov <path to package>
+```
+
+Generate an html report of test coverage and open it
+
+```bash
+$ coverage html
+$ open htmlcov/index.html
+```
+
 ## Naming
 
 If you only developing one package in the repository than `package/` usually has the
@@ -113,3 +134,4 @@ package
 - [Python CLI tools](https://packaging.python.org/en/latest/guides/creating-command-line-tools/)
 - [Logging](https://docs.python.org/3/howto/logging.html)
 - [Setuptools](https://setuptools.pypa.io/en/latest/setuptools.html)
+- [Pytest Youtube Video](https://www.youtube.com/watch?v=cHYq1MRoyI0&list=TLPQMjgwOTIwMjTI9pAc_N7icg)
