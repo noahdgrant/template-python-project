@@ -89,7 +89,8 @@ If you are only developing one tool in the repository than src/ can be removed
 and `package/` can sit in base directory. You can also delete the tools/ directory
 because you can just build the main entry point for the package in `package/__main__.py`
 
-**Single package**
+### Single package
+
 ```
 package
 ├── LICENSE.txt
@@ -104,7 +105,8 @@ package
 └── tests
 ```
 
-**Multiple packages**
+### Multiple packages
+
 ```
 .
 ├── LICENSE.txt
@@ -133,5 +135,6 @@ package
 - [Pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/)
 - [Python CLI tools](https://packaging.python.org/en/latest/guides/creating-command-line-tools/)
 - [Logging](https://docs.python.org/3/howto/logging.html)
+- [Log formatter](https://docs.python.org/3/library/logging.html)
 - [Setuptools](https://setuptools.pypa.io/en/latest/setuptools.html)
 - [Pytest Youtube Video](https://www.youtube.com/watch?v=cHYq1MRoyI0&list=TLPQMjgwOTIwMjTI9pAc_N7icg)
