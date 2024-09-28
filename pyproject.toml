@@ -36,7 +36,8 @@ dev = [
 ]
 
 [project.scripts]
-cli-name = "package.__main__:main"
+cli-name = "package.__main__:cli"
+cli-tool = "cli_tool.__main__:cli"
 
 [project.urls]
 Homepage = "https://example.com"

@@ -26,21 +26,32 @@ def parse_args() -> argparse.Namespace:
     """Parses arguments passed at the command line"""
 
     parser = argparse.ArgumentParser(prog="package", description="Example cli")
-    parser.add_argument(
+    subparsers = parser.add_subparsers(title="subcommands", dest="command")
+
+    # These options will be available to all subcommands they are passed to.
+    # Doing it this way reduces to duplication needed to add these options to all
+    # the the subparsers and lets the CLI API be...
+    # cli-tool get logs --device AAAA
+    # instead of...
+    # cli-tool --device AAAA get logs
+    common_parser = argparse.ArgumentParser(add_help=False)
+    common_parser.add_argument(
         "--log",
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
         help="Set the logging level",
     )
 
-    subparsers = parser.add_subparsers(title="subcommands", dest="command")
-
     say_parser = subparsers.add_parser("say", help="Say various greatings")
     say_subparsers = say_parser.add_subparsers(title="subcommands", dest="resource")
 
-    hello_parser = say_subparsers.add_parser("hello", help="Say hello to someone")
+    hello_parser = say_subparsers.add_parser(
+        "hello", parents=[common_parser], help="Say hello to someone"
+    )
     hello_parser.add_argument("name", help="The name to welcome")
 
-    bye_parser = say_subparsers.add_parser("bye", help="Say bye to someone")
+    bye_parser = say_subparsers.add_parser(
+        "bye", parents=[common_parser], help="Say bye to someone"
+    )
     bye_parser.add_argument("name", help="The name to say bye to")
 
     args = parser.parse_args()
