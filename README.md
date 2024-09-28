@@ -1,6 +1,6 @@
 # Python Template
 
-This repo is a template for how I like to setup python projects
+This repository is a template for how I like to setup python projects
 
 ## Setup
 
@@ -9,7 +9,6 @@ Install python dependencies
 ```bash
 $ sudo apt install python3-venv
 $ pip install virtualenv
-$ pip install pip-tools
 ```
 
 Create a virtual environment
@@ -35,9 +34,10 @@ $ pip install -e .[dev]
 
 ## Usage
 
-With this setup there are two ways to use the package. The pyproject.toml is
-setup to create an executable for the package that you can call from anywhere as
-long as you are using your virtual environment.
+With this setup there are three ways to use the package.
+
+The pyproject.toml is setup to create an executable for the package that you can
+call from anywhere as long as you are using your virtual environment.
 
 You can call the executable
 
@@ -51,16 +51,22 @@ or you can call the package and it will use the defined entry point
 $ python ./src/package say hello <name>
 ```
 
+or you can call the `__main__.py` file directly
+
+```bash
+$ python ./src/package/__main__.py say hello <name>
+```
+
 ## Naming
 
-If you only developing one package in the repository than package/ usually has the
+If you only developing one package in the repository than `package/` usually has the
 same name as the base directory
 
 ## Project Structure
 
 If you are only developing one tool in the repository than src/ can be removed
-and package/ can sit in base directory. You can also delete the tools/ directory
-because you can just build the main entry point for the package in package/__main__.py
+and `package/` can sit in base directory. You can also delete the tools/ directory
+because you can just build the main entry point for the package in `package/__main__.py`
 
 **Single package**
 ```
