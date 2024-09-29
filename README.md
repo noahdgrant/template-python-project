@@ -59,10 +59,10 @@ $ python ./src/package/__main__.py say hello <name>
 
 ### Logging
 
-By default the logger is set to "production" which has a logging level of WARNING
-and only outputs to a file. The recommended way to change this is to create a .env
-file in the project root and specify either "development", "staging", or
-"production" as the `LOGGER` environment variable. Checkout the `logging.toml` file
+By default the logger is set to `production` which has a logging level of `WARNING`
+and only outputs to a file. The recommended way to change this is to create a `.env`
+file in the project root and specify either `development`, `staging`, or
+`production` as the `LOGGER` environment variable. Checkout the `logging.toml` file
 to see the defaults for each logger.
 
 ## Testing
