@@ -29,9 +29,7 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = [
-    "black",
     "coverage",
-    "isort",
     "pytest",
     "pytest-cov",
 ]
