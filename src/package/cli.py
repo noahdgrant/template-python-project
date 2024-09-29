@@ -1,10 +1,15 @@
 import argparse
 import logging
 import logging.config
+import os
 
+import dotenv
 import yaml
 
 from package import say_hello
+
+dotenv.load_dotenv()
+LOGGER = os.getenv("LOGGER", "production")
 
 with open("logging.yaml", "r") as file:
     config = yaml.safe_load(file.read())
@@ -12,7 +17,7 @@ with open("logging.yaml", "r") as file:
 logging.config.dictConfig(config)
 
 # Change this to any of the 'loggers' options in logging.yaml
-logger = logging.getLogger("staging")
+logger = logging.getLogger(LOGGER)
 root_logger = logging.getLogger()
 # Configure the root logger to be the same the logger we select
 # This way logs from other modules will behave the same as logs from this file
