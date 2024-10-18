@@ -81,6 +81,14 @@ def parse_args() -> argparse.Namespace:
 
     args = parser.parse_args()
 
+    if args.command is None:
+        parser.print_help()
+        exit(1)
+
+    if args.resource is None:
+        subparsers.choices[args.command].print_help()
+        exit(1)
+
     if args.log:
         numeric_level = getattr(logging, args.log.upper(), None)
         if not isinstance(numeric_level, int):
